@@ -20,22 +20,22 @@ from pages.audio_demo import audio_demo_content
 
 
 def on_load(e: me.LoadEvent):  # pylint: disable=unused-argument
-  """On load event"""
-  me.set_theme_mode("system")
+    """On load event"""
+    me.set_theme_mode("system")
 
 
 @me.page(
-  path="/audio_demo",
-  title="Audio Demo",
-  security_policy=me.SecurityPolicy(
-    allowed_script_srcs=[
-      "https://cdn.jsdelivr.net",
-    ]
-  ),
-  on_load=on_load,
+    path="/audio_demo",
+    title="Audio Demo",
+    security_policy=me.SecurityPolicy(
+        allowed_script_srcs=[
+            "https://cdn.jsdelivr.net",
+        ]
+    ),
+    on_load=on_load,
 )
 def home_page():
-  """Main Page"""
-  state = me.state(AppState)
-  with page_scaffold():  # pylint: disable=not-context-manager
-    audio_demo_content(state)
+    """Main Page"""
+    state = me.state(AppState)
+    with page_scaffold():  # pylint: disable=not-context-manager
+        audio_demo_content(state)
